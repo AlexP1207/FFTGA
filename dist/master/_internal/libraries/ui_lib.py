@@ -138,6 +138,11 @@ def run(out, root: tk.Tk, progress: ttk.Progressbar,entry:tk.Entry):
         
         progress['value'] = 0
         root.update_idletasks()
+    except ValueError as er:
+        progress['value'] = 0
+        root.update_idletasks()
+        messagebox.showerror(f"ValueError","Please make sure that the file contains only float values.")
+        
     except Exception as e:
         progress['value'] = 0
         root.update_idletasks()
